@@ -1,7 +1,7 @@
 # movie-api
 
 ##  Description
-This is a simple RESTful API for managing movie data. It allows users to create, read, update, and delete movies. The API is designed to demonstrate basic backend development concepts and Restful principles.
+This is a simple Restful API for managing movie data. It allows users to create, read, update, and delete movies. The API is designed to demonstrate basic backend development concepts and Restful principles.
 
 ## Features
 - Add a new movie
