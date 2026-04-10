@@ -5,7 +5,7 @@
   "main": "movie-api/src/server.js",
   "scripts": {
     "start": "node movie-api/src/server.js",
-    "dev": "nodemon movie-api/src/server.js",
+    "dev": "nodemon src/server.js",
     "test": "jest"
   },
   "keywords": [],
