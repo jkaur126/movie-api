@@ -1,15 +1,25 @@
 const express = require("express");
-const cors = require("cors");
-
-const movieRoutes = require("./routes/movieRoutes");
-
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
-app.use("/movies", movieRoutes);
+//Swagger imports
+const swaggerUi = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
+
+//Swagger config
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "My API",
+      version: "1.0.0",
+    },
+  },
+  apis: ["./routes/*.js"],
+};
+
+const swaggerSpec = swaggerJsDoc(options);
+
+// ✅ Swagger route
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 module.exports = app;
