@@ -1,6 +1,6 @@
 const Movie = require("../models/Movie");
 
-//Updated createMovie with image upload support
+// Updated createMovie with image upload support
 exports.createMovie = async (req, res) => {
   try {
     const movie = await Movie.create({
@@ -14,10 +14,15 @@ exports.createMovie = async (req, res) => {
   }
 };
 
-// Get all movies
+// Updated getMovies with genre filter
 exports.getMovies = async (req, res) => {
   try {
-    const movies = await Movie.find();
+    const { genre } = req.query;
+
+    const movies = await Movie.find(
+      genre ? { genre } : {}
+    );
+
     res.json(movies);
   } catch (error) {
     res.status(500).json({ error: error.message });
