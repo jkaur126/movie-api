@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const connectDB = require("./config/db");
 connectDB();
+const movieRoutes = require("./routes/movieRoutes");
+app.use("/api/movies", movieRoutes);
 
 app.use(express.json());
 
