@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/movieController");
+const controller = require("../controller/movieController");
 const upload = require("../middleware/upload");
 
 router.post("/", upload.single("image"), controller.createMovie);
