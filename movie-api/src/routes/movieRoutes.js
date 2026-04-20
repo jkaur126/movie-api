@@ -1,12 +1,26 @@
-const express = require("express");
+import express from "express";
+import {
+  getMovies,
+  getMovie,
+  addMovie,
+  editMovie,
+  removeMovie,
+} from "../controllers/movieController";
+import { validate } from "../middleware/validate";
+import {
+  createMovieSchema,
+  updateMovieSchema,
+  queryMovieSchema,
+} from "../validators/movieValidator";
+import { authenticate } from "../middleware/authenticate";
+import { authorize } from "../middleware/authorize";
+
 const router = express.Router();
-const controller = require("../controller/movieController");
-const upload = require("../middleware/upload");
 
-router.post("/", upload.single("image"), controller.createMovie);
-router.post("/", controller.createMovie);
-router.get("/", controller.getMovies);
-router.put("/:id", controller.updateMovie);
-router.delete("/:id", controller.deleteMovie);
+router.get("/", authenticate, validate(queryMovieSchema, "query"), getMovies);
+router.get("/:id", authenticate, getMovie);
+router.post("/", authenticate, authorize("admin"), validate(createMovieSchema), addMovie);
+router.put("/:id", authenticate, authorize("admin"), validate(updateMovieSchema), editMovie);
+router.delete("/:id", authenticate, authorize("admin"), removeMovie);
 
-module.exports = router;
+export default router;
