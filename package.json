@@ -1,43 +1,24 @@
 {
   "name": "movie-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/server.js",
+  "description": "Movie API project",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node movie-api/src/server.js",
-    "dev": "nodemon movie-api/src/server.js",
-    "test": "jest"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest --coverage"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "firebase-admin": "^13.8.0",
-    "joi": "^18.1.2",
-    "mongoose": "^9.4.1",
-    "multer": "^2.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.1.0",
+    "joi": "^17.13.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "@types/joi": "^17.2.2",
-    "@types/node": "^25.6.0",
-    "@types/swagger-jsdoc": "^6.0.4",
-    "@types/swagger-ui-express": "^4.1.8",
-    "jest": "^30.3.0",
-    "nodemon": "^3.1.14",
-    "supertest": "^7.2.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jkaur126/movie-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jkaur126/movie-api/issues"
-  },
-  "homepage": "https://github.com/jkaur126/movie-api#readme"
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0"
+  }
 }
