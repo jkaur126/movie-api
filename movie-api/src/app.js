@@ -1,30 +1,13 @@
-const express = require("express");
+import express from "express";
+import movieRoutes from "./routes/movieRoutes";
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from ".src/config/swagger";
+
 const app = express();
 
-require("dotenv").config();
 app.use(express.json());
 
-// Swagger
-const swaggerUi = require("swagger-ui-express");
-const swaggerJsDoc = require("swagger-jsdoc");
-
-const options = {
-  definition: {
-    openapi: "3.0.0",
-    info: {
-      title: "Movie API",
-      version: "1.0.0",
-    },
-  },
-  apis: ["./routes/*.js"],
-};
-
-const swaggerSpec = swaggerJsDoc(options);
-
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/movies", movieRoutes);
 
-// Routes
-const movieRoutes = require("./routes/movieRoutes");
-app.use("/api/movies", movieRoutes);
-
-module.exports = app;
+export default app;
