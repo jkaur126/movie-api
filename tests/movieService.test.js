@@ -1,9 +1,9 @@
-const {
+import {
   createMovie,
   getMovieById,
   updateMovie,
   deleteMovie,
-} = require("../src/services/movieService");
+} from "../src/services/movieService";
 
 describe("movieService", () => {
   it("should create a movie", () => {
@@ -38,8 +38,7 @@ describe("movieService", () => {
     });
 
     const updated = updateMovie(movie.id, { title: "New Title" });
-    expect(updated).toBeDefined();
-    expect(updated.title).toBe("New Title");
+    expect(updated?.title).toBe("New Title");
   });
 
   it("should delete a movie", () => {
