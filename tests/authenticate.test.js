@@ -1,10 +1,10 @@
-jest.mock("../src/config/firebase", () => ({
+jest.mock("../movie-api/src/config/firebase", () => ({
   auth: () => ({
     verifyIdToken: jest.fn(),
   }),
 }));
 
-const authenticate = Require("../src/middleware/authenticate");
+const authenticate = require("../movie-api/src/middleware/authenticate");
 
 describe("authenticate middleware", () => {
   const mockResponse = () => {
