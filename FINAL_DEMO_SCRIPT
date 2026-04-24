@@ -1,0 +1,45 @@
+# Final Project Demo Script
+
+## 1. Introduction
+Hello, my name is Jaspreet Kaur. This is my final project demo for my Movie API back-end application.
+
+## 2. Application Demo
+This project is a RESTful Movie API built with Node.js, Express, Firebase, Joi validation, Swagger documentation, and Jest testing.
+
+I will demonstrate the main CRUD operations:
+- Create a movie
+- Get all movies
+- Get one movie
+- Update a movie
+- Delete a movie
+
+I also added advanced features such as filtering, sorting, pagination, and validation.
+
+## 3. New Component
+For the new component, I added secure authentication and role-based authorization using Firebase. This protects routes and allows only authorized users to access certain actions.
+
+## 4. Test Execution
+Now I will run the test suite using:
+
+npm test
+
+The tests check important parts of the application, including movie service functions and authentication middleware.
+
+## 5. Course Alignment
+This project follows the course concepts:
+- RESTful API design
+- Layered structure
+- Middleware
+- Validation
+- Authentication and authorization
+- Testing
+- API documentation
+- Git workflow
+
+## 6. Technical Challenges and Learning
+One challenge I faced was mixing TypeScript and JavaScript files. I solved it by keeping the project consistent in JavaScript and using CommonJS imports.
+
+I also learned how to organize middleware, validation, tests, Swagger documentation, and security features in a cleaner way.
+
+## 7. Conclusion
+This project demonstrates a working back-end API with CRUD operations, security, documentation, testing, and final project organization.
