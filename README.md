@@ -27,4 +27,4 @@ Visit:
 ## Run project
 ```bash
 npm install
-npm run dev
+npm start
