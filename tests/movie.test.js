@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../movie-api/src/app");
+const app = require("../src/app");
 
 describe("Movie API", () => {
   it("should return movies route response", async () => {

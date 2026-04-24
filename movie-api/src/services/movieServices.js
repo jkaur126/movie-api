@@ -48,7 +48,7 @@ function deleteMovie(id) {
   return true;
 }
 
-module.exports = {
+export default {
   createMovie,
   getMovieById,
   updateMovie,
